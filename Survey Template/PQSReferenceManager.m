@@ -174,15 +174,6 @@ static NSString * const mostRecentShowNameKey = @"Most Recent Show Name K£y Key
         }
     }
     
-    else if ([type isEqualToString:@"PQSQuestionTypeRankButtons"]) {
-        NSArray *responses = question[@"responses"];
-
-        
-        q.questionType = PQSQuestionTypeRankButtons;
-        //q.rankParameters = @[question[@"from"], question[@"to"]];
-        [q.possibleAnswers addObjectsFromArray:responses];
-    }
-    
     else if ([type isEqualToString:@"PQSQuestionTypeScale"]) {
         float min = question[@"min"] ? [question[@"min"] floatValue] : 0;
         float max = question[@"max"] ? [question[@"max"] floatValue] : 10;
