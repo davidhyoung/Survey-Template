@@ -106,13 +106,9 @@ static NSString * const mostRecentShowNameKey = @"Most Recent Show Name K£y Key
     PQSQuestion *q = [PQSQuestion new];
     q.question = question[@"title"];
     q.attributedQuestion = [self boldText:question[@"title bold text"] inString:q.question];
+    q.master = question[@"master"];
+    q.observers = question[@"observers"];
     
-    
-//    if (rootQuestion) {
-//        NSLog(@"Question has Root Question: %@", rootQuestion);
-//        rootQuestion.triggerAnswer = [rootQuestion.possibleAnswers lastObject];
-//        q.question = [q.question stringByAppendingString:@"ROOT"];
-//    }
     
     if ([type isEqualToString:@"PQSQuestionTypeCheckBoxes"]) {
         q.questionType = PQSQuestionTypeCheckBoxes;
@@ -125,26 +121,10 @@ static NSString * const mostRecentShowNameKey = @"Most Recent Show Name K£y Key
     
     else if ([type isEqualToString:@"PQSQuestionTypeLargeNumber"]) {
         NSString *units = question[@"units"] ? question[@"units"] : @"";
-        //NSDictionary *conditional = question[@"conditional"];
         
         q.questionType = PQSQuestionTypeLargeNumber;
         q.scaleSuffix = units;
         q.placeholderText = units;
-        
-//        if (conditional) {
-//            NSString *conditionalTitle = conditional[@"title"] ? conditional[@"title"] : @"Default Title";
-//            NSString *conditionalText = conditional[@"placeholder"] ? conditional[@"placeholder"] : @"Default Placeholder Text";
-//            
-//            [q.possibleAnswers addObject:conditionalTitle];
-//            
-//            PQSQuestion *conditionalQ = [PQSQuestion new];
-//            conditionalQ.questionType = PQSQuestionTypeTextView;
-//            conditionalQ.question = conditionalText;
-//            conditionalQ.placeholderText = conditionalText;
-//            
-//            q.triggerAnswer = [q.possibleAnswers lastObject];
-//            q.triggerQuestion = conditionalQ;
-//        }
     }
     
     else if ([type isEqualToString:@"PQSQuestionTypePercentage"]) {
@@ -205,6 +185,33 @@ static NSString * const mostRecentShowNameKey = @"Most Recent Show Name K£y Key
     else if ([type isEqualToString:@"PQSQuestionTypeTrueFalse"]) {
         q.questionType = PQSQuestionTypeTrueFalse;
         q.useYesNoForTrueFalse = YES;
+    }
+    
+    else if ([type isEqualToString:@"PQSQuestionType2WayExclusivityRadioButtons"]) {
+        NSArray *answers = question[@"responses"];
+        NSDictionary *other = question[@"other"];
+        float min = [question[@"scale"][0] floatValue];
+        float max = [question[@"scale"][1] floatValue];
+        
+        q.questionType = PQSQuestionType2WayExclusivityRadioButtons;
+        [q.possibleAnswers addObjectsFromArray:answers];
+        q.minimumScale = min;
+        q.maximumScale = max;
+        
+        if (other) {
+            NSString *otherTitle = other[@"title"] ? other[@"title"] : @"Default Title";
+            NSString *otherText = other[@"placeholder"] ? other[@"placeholder"] : @"Default Placeholder Text";
+            
+            [q.possibleAnswers addObject:otherTitle];
+            
+            PQSQuestion *otherQ = [PQSQuestion new];
+            otherQ.questionType = PQSQuestionTypeTextView;
+            otherQ.question = otherText;
+            otherQ.placeholderText = otherText;
+            
+            q.triggerAnswer = [q.possibleAnswers lastObject];
+            q.triggerQuestion = otherQ;
+        }
     }
     
     else if ([type isEqualToString:@"PQSQuestionTypeNone"]) {
@@ -306,181 +313,6 @@ static NSString * const mostRecentShowNameKey = @"Most Recent Show Name K£y Key
             }
         }
 		
-        
-        
-
-		
-//		PQSQuestion *header1 = [PQSQuestion new];
-//		header1.questionType = PQSQuestionTypeNone;
-//		header1.headerType = PQSHeaderTypePlain;
-//		header1.question = @"Sample questions";
-//		[_questions addObject:header1];
-//		
-//		PQSQuestion *question1 = [PQSQuestion new];
-//		question1.question = @"This allows typing in any number.";
-//		question1.attributedQuestion = [self boldText:@[@"10"] inString:question1.question];
-//		question1.scaleSuffix = @"Eggs";
-//		question1.placeholderText = @"Eggs";
-//		question1.questionType = PQSQuestionTypeLargeNumber;
-//		question1.scaleInterval = 12;
-//		question1.minimumScale = 0;
-//		question1.maximumScale = 500;
-//		[_questions addObject:question1];
-//
-//		
-//		PQSQuestion *question3a = [PQSQuestion new];
-//		question3a.question = @"Time scale question";
-//		question3a.questionType = PQSQuestionTypeTime;
-//		question3a.scaleSuffix = @" Minutes  ";
-//		question3a.startingPoint = 0;
-//		question3a.maximumScale = 180.0f;
-//		question3a.minimumScale = 0.0f;
-//		question3a.scaleInterval = 5.0f;
-//		question3a.isSticky = YES;
-//		[_questions addObject:question3a];
-//		
-//        
-//		PQSQuestion *question3b = [PQSQuestion new];
-//		question3b.question = @"Text VIEW Question";
-//		question3b.questionType = PQSQuestionTypeTextView;
-//		question3b.placeholderText = question3b.question;
-//		[_questions addObject:question3b];
-//		
-//		PQSQuestion *question4c = [PQSQuestion new];
-//		question4c.question = @"Select a Date Question";
-//		question4c.questionType = PQSQuestionTypeDate;
-//		question4c.placeholderText = question4c.question;
-//		question4c.startingDate = [NSDate dateWithTimeIntervalSinceNow:86400];
-//		[_questions addObject:question4c];
-		
-		
-//		PQSQuestion *question6a = [PQSQuestion new];
-//		question6a.question = @"Primary Question";
-//		question6a.questionType = PQSQuestionTypeTrueFalseConditional2;
-//		question6a.useYesNoForTrueFalse = YES;
-//		[_questions addObject:question6a];
-//		
-//			PQSQuestion *question6b = [PQSQuestion new];
-//			question6b.question = @"Secondary Question";
-//			question6b.questionType = PQSQuestionTypeTextField;
-//			question6b.preferredBackgroundTone = question6a.preferredBackgroundTone;
-//			question6a.trueConditionalQuestion	= question6b;
-//			
-//			PQSQuestion *question6c = [PQSQuestion new];
-//			question6c.question = @"Other Secondary Question";
-//			question6c.questionType = PQSQuestionTypeTrueFalse;
-//			question6c.useYesNoForTrueFalse = YES;
-//			question6c.preferredBackgroundTone = question6a.preferredBackgroundTone;
-//			question6a.trueConditionalQuestion2	= question6c;
-
-		
-		
-		
-//		PQSQuestion *question6d = [PQSQuestion new];
-//		question6d.question = @"Primary Yes or No Question";
-//		question6d.questionType = PQSQuestionTypeTrueFalseConditional2;
-//		question6d.useYesNoForTrueFalse = YES;
-//		[_questions addObject:question6d];
-//		
-//			PQSQuestion *question6e = [PQSQuestion new];
-//			question6e.question = @"Secondary Question";
-//			question6e.questionType = PQSQuestionTypeTextField;
-//			question6e.preferredBackgroundTone = question6d.preferredBackgroundTone;
-//			question6d.trueConditionalQuestion	= question6e;
-//			
-//			PQSQuestion *question6f = [PQSQuestion new];
-//			question6f.question = @"Other Secondary Question";
-//			question6f.questionType = PQSQuestionTypeTrueFalse;
-//			question6f.useYesNoForTrueFalse = YES;
-//			question6f.preferredBackgroundTone = question6d.preferredBackgroundTone;
-//			question6d.trueConditionalQuestion2	= question6f;
-		
-		
-		
-		
-//		PQSQuestion *question7 = [PQSQuestion new];
-//		question7.question = @"This question is a fixed height.";
-//		question7.questionType = PQSQuestionTypeTrueFalse;
-//		question7.useYesNoForTrueFalse = YES;
-//		question7.maximumHeight = 55.0f;
-//		[_questions addObject:question7];
-//		
-		
-		
-		
-//		PQSQuestion *header3a = [PQSQuestion new];
-//		header3a.headerType = PQSHeaderTypePlain;
-//		header3a.question = @"Main Header";
-//		[_questions addObject:header3a];
-//
-//		PQSQuestion *header3b = [PQSQuestion new];
-//		header3b.questionType = PQSQuestionTypeNone;
-//		header3b.headerType = PQSHeaderTypeSub;
-//		header3b.question = @"Sub Header";
-//		[_questions addObject:header3b];
-//		
-//		
-//		NSArray *similarQuestions = @[@"Similar Question 1",
-//									  @"Similar Question 2",
-//									  @"Similar Question 3"];
-//		
-//		
-//		for (NSString *questionText in similarQuestions) {
-//			PQSQuestion *rootQuestion = [PQSQuestion new];
-//			rootQuestion.question = questionText;
-//			NSInteger locationOfColon = [questionText rangeOfString:@":"].location;
-//			if (locationOfColon == NSNotFound) {
-//				locationOfColon = questionText.length - 1;
-//			} else {
-//				locationOfColon++;
-//			}
-//            
-//			NSString *boldText = [questionText substringToIndex:locationOfColon];
-//			rootQuestion.attributedQuestion = [self boldText:@[boldText]
-//													inString:questionText];
-//			rootQuestion.questionType = PQSQuestionTypeMultiColumnConditional;
-//			[_questions addObject:rootQuestion];
-//			
-//			PQSQuestion *questionA = [PQSQuestion new];
-//			questionA.question = @"Clinically Acceptable*";
-//			questionA.questionType = PQSQuestionTypeTrueFalse;
-//			questionA.useYesNoForTrueFalse = YES;
-//			
-//			PQSQuestion *questionB = [PQSQuestion new];
-//			questionB.question = @"How does Love compare to hate?†";
-//			questionB.attributedQuestion = [self appendItalicizedText:@"(Optional)" toString:[[NSAttributedString alloc] initWithString:questionB.question]];
-//			questionB.questionType = PQSQuestionTypeRadioButtons;
-//			[questionB.possibleAnswers addObjectsFromArray:@[@"LoVe much better", @"LoVe better", @"Same", @"LoVe worse\n(Please describe)"]];
-//			rootQuestion.triggerAnswer = [questionB.possibleAnswers lastObject];
-//			
-//			PQSQuestion *conditionalQuestion = [PQSQuestion new];
-//			conditionalQuestion.question = @"Please describe";
-//			conditionalQuestion.placeholderText = @"Please describe";
-//			conditionalQuestion.questionType = PQSQuestionTypeTextView;
-//			rootQuestion.triggerQuestion = conditionalQuestion;
-//			
-//			[rootQuestion setMultipleColumnQuestions:@[questionA, questionB]];
-//		}
-//
-//		
-//		
-//		PQSQuestion *question17 = [PQSQuestion new];
-//		question17.question = @"Based upon this survey, you are awesome.";
-//		question17.questionType = PQSQuestionTypeRadioButtons;
-//		[question17.possibleAnswers addObjectsFromArray:@[@"Strongly Disagree",
-//														  @"Disagree",
-//														  @"Neutral",
-//														  @"Agree",
-//														  @"Strongly Agree"]];
-//		[_questions addObject:question17];
-//		
-//		
-//		
-//		PQSQuestion *question18 = [PQSQuestion new];
-//		question18.question = @"Additional Comments";
-//		question18.questionType = PQSQuestionTypeTextView;
-//		question18.placeholderText = @"Comments";
-//		[_questions addObject:question18];
 		
 		PQSQuestion *finePrint = [PQSQuestion new];
 		finePrint.headerType = PQSHeaderTypeFinePrint;
@@ -1067,9 +899,63 @@ static NSString * const mostRecentShowNameKey = @"Most Recent Show Name K£y Key
 
 #pragma mark - Submitting Answers
 
+- (void)layoutObserversOfCondition:(NSDictionary *)condition hidden:(BOOL)hidden {
+ 
+    if (!hidden) {
+        
+        for (PQSQuestion *q in self.questions) {
+            
+            
+            
+            if (q.observers) {
+                NSLog(@"************** Q: %@", q.question);
+            }
+            
+        }
+        
+    }
+    
+    
+}
+
+- (void)checkConditionsForQuestion:(PQSQuestion *)question withAnswer:(NSString *)answer {
+    
+    /*
+     * If there are conditions set for question, verify them
+     * If conditions are met, check for observers of this condition
+     * For these observers, show/hide as appropriate
+     */
+    
+    NSDictionary *condition = question.master;
+    
+    if (condition) {
+        
+        
+        NSString *operator = condition[@"condition"][@"operator"];
+        float conditionVal = [condition[@"condition"][@"comparison"] floatValue];
+        float val = [answer floatValue];
+        
+        BOOL meetsCondition;
+        
+        if ([operator isEqualToString:@"=="]) meetsCondition = val == conditionVal;
+        else if ([operator isEqualToString:@">"]) meetsCondition = val > conditionVal;
+        else if ([operator isEqualToString:@"<"]) meetsCondition = val < conditionVal;
+        
+        
+        NSLog(@"meetsCondition: %d", meetsCondition);
+        
+        // layout view for observers
+        [self layoutObserversOfCondition:condition hidden:!meetsCondition];
+    }
+    
+}
+
 - (void)submitAnswer:(NSString *)answer forQuestion:(PQSQuestion *)question {
 	BOOL submitted = NO;
 	if (answer && question) {
+        
+        [self checkConditionsForQuestion:question withAnswer:answer];
+        
 		for (NSString *tempKey in question.urlKeys.allKeys) {
 			if ([question.question rangeOfString:tempKey].location != NSNotFound) {
 				[self submitAnswer:answer withKey:[question.urlKeys objectForKey:tempKey]];

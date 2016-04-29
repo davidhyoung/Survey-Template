@@ -71,7 +71,11 @@ typedef NS_ENUM(NSUInteger, PQSQuestionViewPreferredBackgroundTone) {
 @property (nonatomic, strong) NSAttributedString *attributedQuestion;
 @property (nonatomic, strong) NSString *question;
 
-
+/**
+ *  Properties for cross-question dependencies
+ */
+@property (nonatomic, strong) NSDictionary *master;
+@property (nonatomic, strong) NSDictionary *observers;
 
 
 

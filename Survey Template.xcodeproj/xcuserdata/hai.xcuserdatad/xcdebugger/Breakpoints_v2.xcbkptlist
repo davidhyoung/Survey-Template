@@ -10,13 +10,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Survey Template/PQSAnswerView.m"
-            timestampString = "483557740.36412"
+            timestampString = "483558438.647993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "590"
-            endingLineNumber = "590"
-            landmarkName = "-radioButtonTouched:"
+            startingLineNumber = "685"
+            endingLineNumber = "685"
+            landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PQSAnswerView tableView:heightForRowAtIndexPath:]"
+                  moduleName = "Survey Template"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HAI/Current%20Work/Boston%20Scientific/AUA%202016%20Market%20Research%20Survey/aua-market-research-survey/Survey%20Template/PQSAnswerView.m"
+                  timestampString = "483642258.426947"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "687"
+                  endingLineNumber = "687"
+                  offsetFromSymbolStart = "656">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[PQSAnswerView tableView:heightForRowAtIndexPath:]"
+                  moduleName = "Survey Template"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/HAI/Current%20Work/Boston%20Scientific/AUA%202016%20Market%20Research%20Survey/aua-market-research-survey/Survey%20Template/PQSAnswerView.m"
+                  timestampString = "483642258.427084"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "687"
+                  endingLineNumber = "687"
+                  offsetFromSymbolStart = "672">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Survey Template/PQSAnswerView.m"
-            timestampString = "483558438.647993"
+            timestampString = "483639114.358814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "685"
-            endingLineNumber = "685"
-            landmarkName = "-radioButtonTouched:"
+            startingLineNumber = "2590"
+            endingLineNumber = "2590"
+            landmarkName = "+buttonTouched:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

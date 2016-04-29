@@ -2553,8 +2553,10 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 															 } else {
 																 [answerButton setTitle:[self paddedString:self.question.placeholderText] forState:UIControlStateNormal];
 															 }
-															 [[PQSReferenceManager sharedReferenceManager] submitAnswer:_textField.text
-																												withKey:[self.question.urlKeys objectForKey:[[self.question.urlKeys allKeys] firstObject]]];
+                                                             
+                                                             [[PQSReferenceManager sharedReferenceManager] submitAnswer:_textField.text forQuestion:self.question];
+//															 [[PQSReferenceManager sharedReferenceManager] submitAnswer:_textField.text
+//																												withKey:[self.question.urlKeys objectForKey:[[self.question.urlKeys allKeys] firstObject]]];
 														 }];
 		
 		[_optionsController addAction:okAction];
