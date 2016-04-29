@@ -37,7 +37,8 @@ typedef NS_ENUM(NSUInteger, PQSHeaderType) {
 	PQSHeaderTypePlain,
 	PQSHeaderTypeSub,
 	PQSHeaderTypeDetail,
-	PQSHeaderTypeFinePrint
+	PQSHeaderTypeFinePrint,
+    PQSHeaderTypeIfRelevant
 };
 
 typedef NS_ENUM(NSUInteger, PQSQuestionViewPreferredBackgroundTone) {
@@ -194,7 +195,7 @@ typedef NS_ENUM(NSUInteger, PQSQuestionViewPreferredBackgroundTone) {
  *  Subquestions for each column of the question.
  */
 @property (nonatomic, strong) NSArray *multipleColumnQuestions;
-@property (nonatomic) BOOL multipleColumnShouldShowQuestion;
+@property (nonatomic) BOOL showHiddenQuestion;
 @property (nonatomic, strong) NSString *triggerAnswer;
 
 /**

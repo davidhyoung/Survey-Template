@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27231A171CD10F89007113DB /* aua16.json in Resources */ = {isa = PBXBuildFile; fileRef = 27231A161CD10F89007113DB /* aua16.json */; };
 		276B83971CCA3FF000B9989C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 276B83961CCA3FF000B9989C /* main.m */; };
 		276B839A1CCA3FF000B9989C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 276B83991CCA3FF000B9989C /* AppDelegate.m */; };
 		276B83A01CCA3FF000B9989C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 276B839E1CCA3FF000B9989C /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		27231A161CD10F89007113DB /* aua16.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = aua16.json; path = Config/aua16.json; sourceTree = "<group>"; };
 		276B83921CCA3FF000B9989C /* Survey Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survey Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		276B83961CCA3FF000B9989C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		276B83981CCA3FF000B9989C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -159,10 +161,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		273840A21CCA76F700E04771 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				27231A161CD10F89007113DB /* aua16.json */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
 		276B83891CCA3FF000B9989C = {
 			isa = PBXGroup;
 			children = (
 				276B84211CCA410400B9989C /* Default-568h@2x.png */,
+				273840A21CCA76F700E04771 /* Config */,
 				276B83941CCA3FF000B9989C /* Survey Template */,
 				276B83AE1CCA3FF000B9989C /* Survey TemplateTests */,
 				276B83B91CCA3FF000B9989C /* Survey TemplateUITests */,
@@ -400,6 +411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27231A171CD10F89007113DB /* aua16.json in Resources */,
 				276B83F11CCA405400B9989C /* headerBackground.png in Resources */,
 				276B84221CCA410400B9989C /* Default-568h@2x.png in Resources */,
 				276B83DE1CCA401200B9989C /* LICENCE.txt in Resources */,
@@ -687,6 +699,7 @@
 				276B83C11CCA3FF000B9989C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		276B83C21CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "Survey TemplateTests" */ = {
 			isa = XCConfigurationList;
@@ -695,6 +708,7 @@
 				276B83C41CCA3FF000B9989C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		276B83C51CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "Survey TemplateUITests" */ = {
 			isa = XCConfigurationList;
@@ -703,6 +717,7 @@
 				276B83C71CCA3FF000B9989C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

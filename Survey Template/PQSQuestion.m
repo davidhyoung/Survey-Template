@@ -133,7 +133,7 @@
 		addedBufferHeight += 10.0f;
 	}
 	
-	if (self.multipleColumnShouldShowQuestion && self.triggerQuestion) {
+	if (self.showHiddenQuestion && self.triggerQuestion) {
 		height += self.triggerQuestion.estimatedHeightForQuestionView;
 	}
 	

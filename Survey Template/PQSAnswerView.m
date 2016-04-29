@@ -163,7 +163,7 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 		if (self.question.possibleAnswers.count > maxMultipleChoiceCount) {
 			[self longListQuestion];
 		} else {
-			[self layoutpossibleAnswers];
+			[self layoutPossibleAnswers];
 		}
 	} else if (self.question.questionType == PQSQuestionTypeTrueFalse) {
 		if (!(([self.question.possibleAnswers containsObject:@"True"] || [self.question.possibleAnswers containsObject:@"Yes"]) &&
@@ -436,7 +436,7 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 		_segmentedControl.question = self.question;
 		
 		if (_segmentedControl.frame.size.width > LONGER_SIDE) {
-			[self layoutpossibleAnswers];
+			[self layoutPossibleAnswers];
 			return;
 		} else if (SHORTER_SIDE > 414.0f && _segmentedControl.frame.size.width > SHORTER_SIDE) {
 			int i = 0;
@@ -464,7 +464,7 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 	}
 	
 	if (_segmentedControl.frame.size.width > LONGER_SIDE) {
-		[self layoutpossibleAnswers];
+		[self layoutPossibleAnswers];
 		return;
 	}
 	
@@ -481,6 +481,8 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 	if (_additionalLabels.count != self.question.possibleAnswers.count) {
 		
 	}
+    
+    [self renderTriggerQuestion];
 }
 
 -(void)resizeSegmentsToFitTitles:(PQSSegmentedControl *)segCtrl {
@@ -582,7 +584,7 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 	BOOL selectedSegmentedControlContainsTrigger = NO;
 	
 	if (!question.triggerAnswer) {
-		NSLog(@"What is going on here? %@", question.triggerAnswer);
+		NSLog(@"Trigger answer is missing? %@", question.triggerAnswer);
 		
 		if (!self.question.triggerAnswer) {
 			NSLog(@"You don't even have one?");
@@ -602,12 +604,12 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 	// if the segemented control that was just selected contains the trigger and the trigger was not selected, then the trigger is deactivated
 	if (selectedSegmentedControlContainsTrigger) {
 		if ([currentAnswerString.lowercaseString containsString:question.triggerAnswer.lowercaseString]) {
-			NSLog(@"Trigger!");
-			question.multipleColumnShouldShowQuestion = YES;
-			self.question.multipleColumnShouldShowQuestion = YES;
+			NSLog(@"Trigger!! - show hidden question: %@", question.triggerQuestion);
+			question.showHiddenQuestion = YES;
+			self.question.showHiddenQuestion = YES;
 		} else {
-			question.multipleColumnShouldShowQuestion = NO;
-			self.question.multipleColumnShouldShowQuestion = NO;
+			question.showHiddenQuestion = NO;
+			self.question.showHiddenQuestion = NO;
 		}
 		
 		if ([self.delegate respondsToSelector:@selector(reloadQuestions)]) {
@@ -631,7 +633,7 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 
 #pragma mark - Multiple Choice Layout
 
-- (void)layoutpossibleAnswers {
+- (void)layoutPossibleAnswers {
 	if (!_tableView) {
 		_tableView = [[UITableView alloc] initWithFrame:[self possibleAnswersFrame]];
 		
@@ -1447,7 +1449,7 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 		_segmentedControl.question = self.question;
 		
 		if (_segmentedControl.frame.size.width > LONGER_SIDE) {
-			[self layoutpossibleAnswers];
+			[self layoutPossibleAnswers];
 			return;
 		}
 		
@@ -1460,7 +1462,7 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 	}
 	
 	if (_segmentedControl.frame.size.width > LONGER_SIDE) {
-		[self layoutpossibleAnswers];
+		[self layoutPossibleAnswers];
 		return;
 	}
 	
@@ -1525,7 +1527,7 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 		_segmentedControl.question = self.question;
 		
 		if (_segmentedControl.frame.size.width > LONGER_SIDE) {
-			[self layoutpossibleAnswers];
+			[self layoutPossibleAnswers];
 			return;
 		}
 		
@@ -1539,7 +1541,7 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 	}
 	
 	if (_segmentedControl.frame.size.width > LONGER_SIDE) {
-		[self layoutpossibleAnswers];
+		[self layoutPossibleAnswers];
 		return;
 	}
 	
@@ -2108,26 +2110,7 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 
 	}
 	
-	if (self.question.triggerQuestion && self.question.multipleColumnShouldShowQuestion && !_triggerAnswerView) {
-		_triggerAnswerView = [[PQSAnswerView alloc] initWithFrame:self.bounds
-														 question:self.question.triggerQuestion];
-		_triggerAnswerView.delegate = self.delegate;
-		[_triggerAnswerView layoutSubviews];
-	} else {
-		//NSLog(@"Trigger Question: %@", self.question.triggerQuestion.question);
-		//NSLog(@"Trigger Answer:   %@", self.question.triggerAnswer);
-	}
-	
-	if (_triggerAnswerView.answerButton) {
-		_triggerAnswerView.answerButton.frame = [self triggerViewFrame];
-		
-		if (self.question.multipleColumnShouldShowQuestion) {
-			[self.containerView addSubview:_triggerAnswerView.answerButton];
-			_triggerAnswerView.answerButton.frame = CGRectMake(_triggerAnswerView.answerButton.superview.frame.size.width - _triggerAnswerView.answerButton.titleLabel.frame.size.width, _triggerAnswerView.answerButton.frame.origin.y, _triggerAnswerView.answerButton.frame.size.width, _triggerAnswerView.answerButton.frame.size.height);
-		} else {
-			[_triggerAnswerView.answerButton removeFromSuperview];
-		}
-	}
+    [self renderTriggerQuestion];
 }
 
 - (CGRect)triggerViewFrame {
@@ -2139,6 +2122,25 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 	return frame;
 }
 
+- (void)renderTriggerQuestion {
+    if (self.question.triggerQuestion && self.question.showHiddenQuestion && !_triggerAnswerView) {
+        _triggerAnswerView = [[PQSAnswerView alloc] initWithFrame:self.bounds
+                                                         question:self.question.triggerQuestion];
+        _triggerAnswerView.delegate = self.delegate;
+        [_triggerAnswerView layoutSubviews];
+    }
+    
+    if (_triggerAnswerView.answerButton) {
+        _triggerAnswerView.answerButton.frame = [self triggerViewFrame];
+        
+        if (self.question.showHiddenQuestion) {
+            [self.containerView addSubview:_triggerAnswerView.answerButton];
+            _triggerAnswerView.answerButton.frame = CGRectMake(_triggerAnswerView.answerButton.superview.frame.size.width - _triggerAnswerView.answerButton.titleLabel.frame.size.width, _triggerAnswerView.answerButton.frame.origin.y, _triggerAnswerView.answerButton.frame.size.width, _triggerAnswerView.answerButton.frame.size.height);
+        } else {
+            [_triggerAnswerView.answerButton removeFromSuperview];
+        }
+    }
+}
 
 
 
@@ -2650,9 +2652,9 @@ static NSString * const senderKey = @"s£nD£rK£Y";
 		if (selectedSegmentedControlContainsTrigger) {
 			if ([currentAnswerString.lowercaseString containsString:question.triggerAnswer.lowercaseString]) {
 				NSLog(@"Trigger!");
-				question.multipleColumnShouldShowQuestion = YES;
+				question.showHiddenQuestion = YES;
 			} else {
-				question.multipleColumnShouldShowQuestion = NO;
+				question.showHiddenQuestion = NO;
 			}
 			
 //			if ([self.delegate respondsToSelector:@selector(reloadQuestions)]) {

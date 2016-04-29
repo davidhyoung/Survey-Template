@@ -539,7 +539,7 @@ static NSString * const questionsTableViewCellIdentifier = @"questionsTableViewC
 		[_questionViews removeAllObjects];
 		for (PQSQuestion *question in [[PQSReferenceManager sharedReferenceManager] questions]) {
 			question.trueFalseConditionalHasAnswer = NO;
-			question.multipleColumnShouldShowQuestion = NO;
+			question.showHiddenQuestion = NO;
 		}
 		[self.questionTableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.5f];
 		[self performSelector:@selector(scrollToTopOfQuestionTableView) withObject:self afterDelay:1.0f];

@@ -157,37 +157,39 @@
 		}
 		
 		_questionLabel = [[UILabel alloc] initWithFrame:frame];
+        _questionLabel.textAlignment = NSTextAlignmentLeft;
+        _questionLabel.numberOfLines = 0; // unlimited number of lines
+        _questionLabel.adjustsFontSizeToFitWidth = YES;
 
 		if (self.question.questionType == PQSQuestionTypeNone) {
+            
 			if (self.question.headerType == PQSHeaderTypePlain) {
 				[_questionLabel setFont:[UIFont appFontOfSize:32.0f]];
 				frame.origin.y = 22.0f;
-				_questionLabel.frame = frame;
-				_questionLabel.adjustsFontSizeToFitWidth = YES;
 				_questionLabel.numberOfLines = 1;
-			} else if (self.question.headerType == PQSHeaderTypeSub) {
+			}
+            else if (self.question.headerType == PQSHeaderTypeSub) {
 				[_questionLabel setFont:[UIFont appFontOfSize:26.0f]];
 				frame.origin.y = 24.0f;
-				_questionLabel.frame = frame;
-				_questionLabel.adjustsFontSizeToFitWidth = YES;
-			} else if (self.question.headerType == PQSHeaderTypeDetail) {
+			}
+            else if (self.question.headerType == PQSHeaderTypeDetail) {
 				[_questionLabel setFont:[UIFont appFontOfSize:22.0f]];
 				frame.origin.y = 100.0f;
-				_questionLabel.frame = frame;
-				_questionLabel.adjustsFontSizeToFitWidth = YES;
-			} else if (self.question.headerType == PQSHeaderTypeFinePrint) {
+			}
+            else if (self.question.headerType == PQSHeaderTypeFinePrint) {
 				[_questionLabel setFont:[UIFont appFontOfSize:12.0f]];
 				frame.origin.y = 25.0f;
-				_questionLabel.frame = frame;
-				_questionLabel.adjustsFontSizeToFitWidth = YES;
 			}
+            
+            _questionLabel.frame = frame;
+            
 		} else {
+            
 			[_questionLabel setFont:[UIFont appFont]];
-		}
 		
-		_questionLabel.textAlignment = NSTextAlignmentLeft;
-		_questionLabel.numberOfLines = 0; // unlimited number of lines
-//		_questionLabel.adjustsFontSizeToFitWidth = YES;
+        }
+		
+		
 		
 		if (self.question.attributedQuestion) {
 			NSMutableAttributedString *questionAttributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.question.attributedQuestion];
@@ -301,7 +303,7 @@
 		}
 	}
 	
-	if (self.question.questionType == PQSQuestionTypeMultiColumnConditional && self.question.multipleColumnShouldShowQuestion) {
+	if (self.question.questionType == PQSQuestionTypeMultiColumnConditional && self.question.showHiddenQuestion) {
 		frame.size.height += 66.0f;
 	}
 	
