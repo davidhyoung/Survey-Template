@@ -5,17 +5,17 @@
 			"title": "Screening questions:",
 			"questions": [
 				{
-					"title": "In what country do you practice?",
+					"title": "1) In what country do you practice?",
 					"type": "PQSQuestionTypeTextField",
 					"placeholder": "Enter country..."
 				},
 				{
-					"title": "Please state how many procedures you perform per month:",
+					"title": "2) Please state how many procedures you perform per month:",
 					"bold": ["per month"],
 					"type": "PQSQuestionTypeNone",
 					"questions": [
 						{
-							"title": "Ureteroscopy #/month",
+							"title": "a. Ureteroscopy #/month",
 							"type": "PQSQuestionTypeLargeNumber",
 							"master": {
 								"key": "UreteroscopyPerMonth",
@@ -26,17 +26,17 @@
 							}
 						},
 						{
-							"title": "PCNL #/month",
+							"title": "b. PCNL #/month",
 							"type": "PQSQuestionTypeLargeNumber",
 							"observers": ["UreteroscopyPerMonth"]
 						},
 						{
-							"title": "Mid-uretheral sling procedures for the treatment of female stress urinary incontinence #/month",
+							"title": "c. Mid-uretheral sling procedures for the treatment of female stress urinary incontinence #/month",
 							"type": "PQSQuestionTypeLargeNumber",
 							"observers": ["UreteroscopyPerMonth"]
 						},
 						{
-							"title": "Surgical BPH procedures #/month (defined as TURP, Laser BPH or open procedures)",
+							"title": "d. Surgical BPH procedures #/month (defined as TURP, Laser BPH or open procedures)",
 							"type": "PQSQuestionTypeLargeNumber",
 							"conditional": [
 								{
@@ -72,7 +72,7 @@
 			"title": "Men’s Health:",
 			"questions": [
 				{
-					"title": "1. What do you consider social continence following radical prostatectomy?",
+					"title": "1) What do you consider social continence following radical prostatectomy?",
 					"type": "PQSQuestionTypeRadioButtons",
 					"responses": [
 						"0 Pads per Day (PPD)",
@@ -85,7 +85,7 @@
 					}
 				},
 				{
-					"title": "2. What consultation do you provide your patients that fail one or more PDE-5s (oral medications) for Erectile Dysfunction and still want to find a solution to their ED?",
+					"title": "2) What consultation do you provide your patients that fail one or more PDE-5s (oral medications) for Erectile Dysfunction and still want to find a solution to their ED?",
 					"type": "PQSQuestionTypeRadioButtons",
 					"responses": [
 						"A. I advise them to continue using the drug",
@@ -102,7 +102,7 @@
 			"title": "Stone:",
 			"questions": [
 				{
-					"title": "1. What is your preferred working wire during a ureteroscopy?",
+					"title": "3) What is your preferred working wire during a ureteroscopy?",
 					"type": "PQSQuestionType2WayExclusivityRadioButtons",
 					"scale": [1, 3],
 					"responses": [
@@ -121,7 +121,7 @@
 					}
 				},
 				{
-					"title": "2. Why did you select this guidewire as your most preferred working wire?",
+					"title": "4) Why did you select this guidewire as your most preferred working wire?",
 					"type": "PQSQuestionTypeRadioButtons",
 					"responses": [
 						"Performs the best",
@@ -135,7 +135,7 @@
 					}
 				},
 				{
-					"title": "3. What size ureteral access sheath do you use most often?",
+					"title": "5) What size ureteral access sheath do you use most often?",
 					"bold": ["ureteral access sheath"],
 					"type": "PQSQuestionTypeRadioButtons",
 					"responses": [
@@ -152,43 +152,43 @@
 					}
 				},
 				{
-					"title": "4. When fragmenting stones during a ureteroscopy, please estimate",
+					"title": "6) When fragmenting stones during a ureteroscopy, please estimate",
 					"bold": ["fragmenting"],
 					"type": "PQSQuestionTypeNone",
 					"ifRelevant": "NA – I don’t fragment stones with a laser",
 					"questions": [
 						{
-							"title": "Total lasing time for an average length case:  _______ minutes",
+							"title": "a. Total lasing time for an average length case:  _______ minutes",
 							"type": "PQSQuestionTypeTextField",
 							"placeholder": ""
 						},
 						{
-							"title": "Total lasing time for a long case: _______ minutes",
+							"title": "b. Total lasing time for a long case: _______ minutes",
 							"type": "PQSQuestionTypeTextField",
 							"placeholder": ""
 						}
 					]
 				},
 				{
-					"title": "5. When dusting stones during a ureteroscopy, please estimate",
+					"title": "7) When dusting stones during a ureteroscopy, please estimate",
 					"bold": ["dusting"],
 					"type": "PQSQuestionTypeNone",
 					"naText": "NA – I don’t dust stones with a laser",
 					"questions": [
 						{
-							"title": "Total lasing time for an average length case:  _______ minutes",
+							"title": "a. Total lasing time for an average length case:  _______ minutes",
 							"type": "PQSQuestionTypeTextField",
 							"placeholder": ""
 						},
 						{
-							"title": "Total lasing time for a long case: _______ minutes",
+							"title": "b. Total lasing time for a long case: _______ minutes",
 							"type": "PQSQuestionTypeTextField",
 							"placeholder": ""
 						}
 					]
 				},
 				{
-					"title": "6. If you were to purchase a high watt holmium laser for your facility, what laser would you most likely purchase?  Please rank 1-3, where 1 = the laser that you would most likely purchase and 3 = the laser you would least likely purchase.",
+					"title": "8) If you were to purchase a high watt holmium laser for your facility, what laser would you most likely purchase?  Please rank 1-3, where 1 = the laser that you would most likely purchase and 3 = the laser you would least likely purchase.",
 					"type": "PQSQuestionType2WayExclusivityRadioButtons",
 					"scale": [1, 3],
 					"responses": [
@@ -198,7 +198,7 @@
 					]
 				},
 				{
-					"title": "7. Please choose the urological lithotripter you use most often during a PCNL case",
+					"title": "9) Please choose the urological lithotripter you use most often during a PCNL case",
 					"type": "PQSQuestionTypeRadioButtons",
 					"responses": [
 						"ShockPulse-SE (Olympus)",
@@ -213,7 +213,7 @@
 					}
 				},
 				{
-					"title": "8. Do you achieve your own access during PCNL procedures",
+					"title": "10) Do you achieve your own access during PCNL procedures",
 					"type": "PQSQuestionTypeRadioButtons",
 					"responses": [
 						"Yes",
@@ -222,11 +222,11 @@
 					]
 				},
 				{
-					"title": "9. What % of your surgical BPH procedures are performed with lasers?  ____ %",
+					"title": "11) What % of your surgical BPH procedures are performed with lasers?  ____ %",
 					"type": "PQSQuestionTypePercentage"
 				},
 				{
-					"title": "10. Of the surgical BPH procedures you perform with lasers, what % of your cases are performed with each of the following?",
+					"title": "12) Of the surgical BPH procedures you perform with lasers, what % of your cases are performed with each of the following?",
 					"type": "PQSQuestionTypeNone",
 					"questions": [
 						{
@@ -244,7 +244,7 @@
 					]
 				},
 				{
-					"title": "11. When using a laser for a BPH procedure, in what percentage of your cases do you use the following techniques? ",
+					"title": "13) When using a laser for a BPH procedure, in what percentage of your cases do you use the following techniques? ",
 					"type": "PQSQuestionTypeNone",
 					"questions": [
 						{
@@ -258,7 +258,7 @@
 					]
 				},
 				{
-					"title": "12. How have the results of the prospective, randomized, multi-center GOLIATH study impacted your perception of the GreenLight technology?",
+					"title": "14) How have the results of the prospective, randomized, multi-center GOLIATH study impacted your perception of the GreenLight technology?",
 					"type": "PQSQuestionTypeScale",
 					"min": 1,
 					"max": 7
@@ -269,7 +269,7 @@
 			"title": "Women's Health:",
 			"questions": [
 				{
-					"title": "1. Are you a former Astora Sling user?",
+					"title": "15) Are you a former Astora Sling user?",
 					"type": "PQSQuestionTypeTrueFalse",
 					"conditional": [
 						{
@@ -280,7 +280,7 @@
 									"type": "PQSQuestionTypeTrueFalse"
 								},
 								{
-									"title": "i. What products did you use?",
+									"title": "16) What products did you use?",
 									"type": "PQSQuestionTypeCheckBoxes",
 									"responses": [
 										"RetroArc Retropubic",
@@ -290,7 +290,7 @@
 									]
 								},
 								{
-									"title": "ii. What product do you intend on using moving forward? ",
+									"title": "17) What product do you intend on using moving forward? ",
 									"type": "PQSQuestionTypeCheckBoxes",
 									"responses": [
 										"BSC Advantage/Advantage Fit Retropubic",

@@ -67,17 +67,17 @@
 
 /* Begin PBXFileReference section */
 		27231A161CD10F89007113DB /* aua16.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = aua16.json; path = Config/aua16.json; sourceTree = "<group>"; };
-		276B83921CCA3FF000B9989C /* Survey Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Survey Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		276B83921CCA3FF000B9989C /* AUA Survey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AUA Survey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		276B83961CCA3FF000B9989C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		276B83981CCA3FF000B9989C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		276B83991CCA3FF000B9989C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		276B839F1CCA3FF000B9989C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		276B83A11CCA3FF000B9989C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		276B83A41CCA3FF000B9989C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		276B83AB1CCA3FF000B9989C /* Survey TemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Survey TemplateTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		276B83AB1CCA3FF000B9989C /* AUA Survey.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AUA Survey.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		276B83AF1CCA3FF000B9989C /* Survey_TemplateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Survey_TemplateTests.m; sourceTree = "<group>"; };
 		276B83B11CCA3FF000B9989C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		276B83B61CCA3FF000B9989C /* Survey TemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Survey TemplateUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		276B83B61CCA3FF000B9989C /* AUA Survey.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AUA Survey.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		276B83BA1CCA3FF000B9989C /* Survey_TemplateUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Survey_TemplateUITests.m; sourceTree = "<group>"; };
 		276B83BC1CCA3FF000B9989C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		276B83C91CCA400600B9989C /* APNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APNumberButton.h; sourceTree = "<group>"; };
@@ -184,9 +184,9 @@
 		276B83931CCA3FF000B9989C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				276B83921CCA3FF000B9989C /* Survey Template.app */,
-				276B83AB1CCA3FF000B9989C /* Survey TemplateTests.xctest */,
-				276B83B61CCA3FF000B9989C /* Survey TemplateUITests.xctest */,
+				276B83921CCA3FF000B9989C /* AUA Survey.app */,
+				276B83AB1CCA3FF000B9989C /* AUA Survey.xctest */,
+				276B83B61CCA3FF000B9989C /* AUA Survey.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -311,9 +311,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		276B83911CCA3FF000B9989C /* Survey Template */ = {
+		276B83911CCA3FF000B9989C /* AUA Survey */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 276B83BF1CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "Survey Template" */;
+			buildConfigurationList = 276B83BF1CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "AUA Survey" */;
 			buildPhases = (
 				276B838E1CCA3FF000B9989C /* Sources */,
 				276B838F1CCA3FF000B9989C /* Frameworks */,
@@ -323,14 +323,14 @@
 			);
 			dependencies = (
 			);
-			name = "Survey Template";
+			name = "AUA Survey";
 			productName = "Survey Template";
-			productReference = 276B83921CCA3FF000B9989C /* Survey Template.app */;
+			productReference = 276B83921CCA3FF000B9989C /* AUA Survey.app */;
 			productType = "com.apple.product-type.application";
 		};
-		276B83AA1CCA3FF000B9989C /* Survey TemplateTests */ = {
+		276B83AA1CCA3FF000B9989C /* AUA SurveyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 276B83C21CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "Survey TemplateTests" */;
+			buildConfigurationList = 276B83C21CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "AUA SurveyTests" */;
 			buildPhases = (
 				276B83A71CCA3FF000B9989C /* Sources */,
 				276B83A81CCA3FF000B9989C /* Frameworks */,
@@ -341,14 +341,14 @@
 			dependencies = (
 				276B83AD1CCA3FF000B9989C /* PBXTargetDependency */,
 			);
-			name = "Survey TemplateTests";
+			name = "AUA SurveyTests";
 			productName = "Survey TemplateTests";
-			productReference = 276B83AB1CCA3FF000B9989C /* Survey TemplateTests.xctest */;
+			productReference = 276B83AB1CCA3FF000B9989C /* AUA Survey.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		276B83B51CCA3FF000B9989C /* Survey TemplateUITests */ = {
+		276B83B51CCA3FF000B9989C /* AUA SurveyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 276B83C51CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "Survey TemplateUITests" */;
+			buildConfigurationList = 276B83C51CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "AUA SurveyUITests" */;
 			buildPhases = (
 				276B83B21CCA3FF000B9989C /* Sources */,
 				276B83B31CCA3FF000B9989C /* Frameworks */,
@@ -359,9 +359,9 @@
 			dependencies = (
 				276B83B81CCA3FF000B9989C /* PBXTargetDependency */,
 			);
-			name = "Survey TemplateUITests";
+			name = "AUA SurveyUITests";
 			productName = "Survey TemplateUITests";
-			productReference = 276B83B61CCA3FF000B9989C /* Survey TemplateUITests.xctest */;
+			productReference = 276B83B61CCA3FF000B9989C /* AUA Survey.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -386,7 +386,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 276B838D1CCA3FF000B9989C /* Build configuration list for PBXProject "Survey Template" */;
+			buildConfigurationList = 276B838D1CCA3FF000B9989C /* Build configuration list for PBXProject "AUA Survey" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -399,9 +399,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				276B83911CCA3FF000B9989C /* Survey Template */,
-				276B83AA1CCA3FF000B9989C /* Survey TemplateTests */,
-				276B83B51CCA3FF000B9989C /* Survey TemplateUITests */,
+				276B83911CCA3FF000B9989C /* AUA Survey */,
+				276B83AA1CCA3FF000B9989C /* AUA SurveyTests */,
+				276B83B51CCA3FF000B9989C /* AUA SurveyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -496,12 +496,12 @@
 /* Begin PBXTargetDependency section */
 		276B83AD1CCA3FF000B9989C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 276B83911CCA3FF000B9989C /* Survey Template */;
+			target = 276B83911CCA3FF000B9989C /* AUA Survey */;
 			targetProxy = 276B83AC1CCA3FF000B9989C /* PBXContainerItemProxy */;
 		};
 		276B83B81CCA3FF000B9989C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 276B83911CCA3FF000B9989C /* Survey Template */;
+			target = 276B83911CCA3FF000B9989C /* AUA Survey */;
 			targetProxy = 276B83B71CCA3FF000B9989C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -617,8 +617,8 @@
 				INFOPLIST_FILE = "Survey Template/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nathanfennel.Survey-Template";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.aua16Survey;
+				PRODUCT_NAME = "AUA Survey";
 			};
 			name = Debug;
 		};
@@ -629,8 +629,8 @@
 				INFOPLIST_FILE = "Survey Template/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nathanfennel.Survey-Template";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nathanfennel.aua16Survey;
+				PRODUCT_NAME = "AUA Survey";
 			};
 			name = Release;
 		};
@@ -641,8 +641,8 @@
 				INFOPLIST_FILE = "Survey TemplateTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nathanfennel.Survey-TemplateTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Survey Template.app/Survey Template";
+				PRODUCT_NAME = "AUA Survey";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AUA Survey.app/AUA Survey";
 			};
 			name = Debug;
 		};
@@ -653,8 +653,8 @@
 				INFOPLIST_FILE = "Survey TemplateTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nathanfennel.Survey-TemplateTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Survey Template.app/Survey Template";
+				PRODUCT_NAME = "AUA Survey";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AUA Survey.app/AUA Survey";
 			};
 			name = Release;
 		};
@@ -664,7 +664,7 @@
 				INFOPLIST_FILE = "Survey TemplateUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nathanfennel.Survey-TemplateUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "AUA Survey";
 				TEST_TARGET_NAME = "Survey Template";
 			};
 			name = Debug;
@@ -675,7 +675,7 @@
 				INFOPLIST_FILE = "Survey TemplateUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nathanfennel.Survey-TemplateUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "AUA Survey";
 				TEST_TARGET_NAME = "Survey Template";
 			};
 			name = Release;
@@ -683,7 +683,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		276B838D1CCA3FF000B9989C /* Build configuration list for PBXProject "Survey Template" */ = {
+		276B838D1CCA3FF000B9989C /* Build configuration list for PBXProject "AUA Survey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				276B83BD1CCA3FF000B9989C /* Debug */,
@@ -692,7 +692,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		276B83BF1CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "Survey Template" */ = {
+		276B83BF1CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "AUA Survey" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				276B83C01CCA3FF000B9989C /* Debug */,
@@ -701,7 +701,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		276B83C21CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "Survey TemplateTests" */ = {
+		276B83C21CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "AUA SurveyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				276B83C31CCA3FF000B9989C /* Debug */,
@@ -710,7 +710,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		276B83C51CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "Survey TemplateUITests" */ = {
+		276B83C51CCA3FF000B9989C /* Build configuration list for PBXNativeTarget "AUA SurveyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				276B83C61CCA3FF000B9989C /* Debug */,

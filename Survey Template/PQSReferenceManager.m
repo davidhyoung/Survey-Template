@@ -217,18 +217,11 @@ static NSString * const mostRecentShowNameKey = @"Most Recent Show Name K£y Key
     else if ([type isEqualToString:@"PQSQuestionTypeNone"]) {
         q.questionType = PQSQuestionTypeNone;
         
-        
         NSString *ifRelevant = question[@"ifRelevant"];
-        
         if (ifRelevant) {
-            
             q.headerType = PQSHeaderTypeIfRelevant;
-            
-        
         } else {
-            
             q.headerType = PQSHeaderTypeSub; // PQSHeaderTypePlain - to make sticky
-            
         }
     }
     
@@ -316,7 +309,7 @@ static NSString * const mostRecentShowNameKey = @"Most Recent Show Name K£y Key
 		
 		PQSQuestion *finePrint = [PQSQuestion new];
 		finePrint.headerType = PQSHeaderTypeFinePrint;
-		finePrint.question = @"*Fine Print\n†Other Fine Print";
+		finePrint.question = @"Disclaimer:  This study is intended only to elicit your general impressions, product delivery and design performance opinions, and clinical acceptability, product and treatment selection criteria and/or market perspectives.  By participating in this study, you agree to not use, distribute, print, or share the content of this research, and acknowledge that your responses do not contain or disclose any confidential information belonging to you or any outside party and may be used for market research, to inform market trends, and guide product planning. This research is not intended to promote the sale of anything referenced in the materials.";
 		finePrint.preferredBackgroundTone = PQSQuestionViewPreferredBackgroundToneLight;
 		[_questions addObject:finePrint];
 		

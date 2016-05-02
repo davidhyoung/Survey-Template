@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "276B83911CCA3FF000B9989C"
-               BuildableName = "Survey Template.app"
-               BlueprintName = "Survey Template"
-               ReferencedContainer = "container:Survey Template.xcodeproj">
+               BuildableName = "AUA Survey.app"
+               BlueprintName = "AUA Survey"
+               ReferencedContainer = "container:AUA Survey.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,34 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "276B83AA1CCA3FF000B9989C"
-               BuildableName = "Survey TemplateTests.xctest"
-               BlueprintName = "Survey TemplateTests"
-               ReferencedContainer = "container:Survey Template.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "276B83B51CCA3FF000B9989C"
-               BuildableName = "Survey TemplateUITests.xctest"
-               BlueprintName = "Survey TemplateUITests"
-               ReferencedContainer = "container:Survey Template.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "276B83911CCA3FF000B9989C"
-            BuildableName = "Survey Template.app"
-            BlueprintName = "Survey Template"
-            ReferencedContainer = "container:Survey Template.xcodeproj">
+            BuildableName = "AUA Survey.app"
+            BlueprintName = "AUA Survey"
+            ReferencedContainer = "container:AUA Survey.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "276B83911CCA3FF000B9989C"
-            BuildableName = "Survey Template.app"
-            BlueprintName = "Survey Template"
-            ReferencedContainer = "container:Survey Template.xcodeproj">
+            BuildableName = "AUA Survey.app"
+            BlueprintName = "AUA Survey"
+            ReferencedContainer = "container:AUA Survey.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "276B83911CCA3FF000B9989C"
-            BuildableName = "Survey Template.app"
-            BlueprintName = "Survey Template"
-            ReferencedContainer = "container:Survey Template.xcodeproj">
+            BuildableName = "AUA Survey.app"
+            BlueprintName = "AUA Survey"
+            ReferencedContainer = "container:AUA Survey.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
